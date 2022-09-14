@@ -17,9 +17,12 @@ CREATE TABLE product_orders(
 );
 
 CREATE TABLE products_orders_list (
-                                      item_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                                      order_id INT UNSIGNED NOT NULL ,
-                                      product_id INT UNSIGNED NOT NULL ,
-                                      quantity TINYINT(2) NOT NULL
+    item_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    order_id INT UNSIGNED NOT NULL ,
+    product_id INT UNSIGNED NOT NULL ,
+    quantity TINYINT(2) NOT NULL
 );
+
+ALTER TABLE products_orders_list ADD CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES products (product_id)
+
 
