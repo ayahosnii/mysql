@@ -1,0 +1,7 @@
+USE store;
+SHOW TABLES ;
+
+SELECT * FROM users ORDER BY username ASC;
+SELECT * FROM users ORDER BY username ASC LIMIT 3 OFFSET 3;
+SELECT * FROM users ORDER BY username ASC LIMIT 2, 4;
+
