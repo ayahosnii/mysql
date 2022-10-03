@@ -42,79 +42,101 @@ if (isset($_POST['submit'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PDO</title>
-        <style type="text/css">
-            *{
-                margin: 0;
-                padding: 0;
-                border: 0;
-                outline: none;
-                line-height: 1.2;
-                font-size: 1em;
-            }
-            form.app_form{
-                width: 300px;
-                margin: 100px auto 0 auto;
-            }
-
-            form.app_form fieldset{
-                padding: 10px;
-                background: #f1f1f1;
-                border: solid 1px #e4e4e4;
-            }
-            form.app_form fieldset legend{
-                font: 1em 'Arial, Helvetice, sans-serif';
-                color: #666;
-                background: #e4e4e4;
-                padding: 5px;
-            }
-            form.app_form table {
-                width: 100%;
-            }
-            form.app_form label {
-                font-family: Arial;
-                color: #666666;
-            }
-            form.app_form table tr td input[type=text]{
-                width: 90%;
-                padding: 2%;
-                font-size: 1em;
-
-            }
-            form.app_form table tr td input[type=submit]{
-                padding: 8px;
-                border-radius: 3px;
-                background: darkcyan;
-                color: #fff;
-                font-family: Arial;
-                font-size: 1em;
-            }
-            form.app_form table tr td{
-                padding: 4px;
-            }
-        </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<form class="app_form" method="POST" enctype="application/x-www-form-urlencoded">
-    <p class="message"><?= isset($message) ? $message : ''?></p>
-    <fieldset>
-        <legend>Employee Information</legend>
-    <table>
-        <tr>
-            <label for="name">Employee Name</label>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" name="name" placeholder="Write the employee name here">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" name="submit" value="save">
-            </td>
-        </tr>
-    </table>
-    </fieldset>
-</form>
+<div class="wrapper">
+    <div class="empform">
+        <form class="app_form" method="POST" enctype="application/x-www-form-urlencoded">
+            <p class="message"><?= isset($message) ? $message : ''?></p>
+            <fieldset>
+                <legend>Employee Information</legend>
+            <table>
+                <tr>
+                    <label for="name">Employee Name</label>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="name" placeholder="Write the employee name here" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="age">Employee Age</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="age" min="22" max="60" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Employee Address</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="address" placeholder="Write the employee address here">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="salary">Employee Salary</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="salary" step="0.01" min="1500" max="9000" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="tax">Employee Tax (%)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" name="tax" min="1" max="5" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" value="save">
+                    </td>
+                </tr>
+            </table>
+            </fieldset>
+        </form>
+    </div>
+    <div class="employees">
+        <table>
+            <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Salary</th>
+            <th>Tax (%)</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Aya</td>
+                <td>25</td>
+                <td>Cairo</td>
+                <td>3000</td>
+                <td>0.03</td>
+            </tr>
+            <tr>
+                <td>Aya</td>
+                <td>25</td>
+                <td>Cairo</td>
+                <td>3000</td>
+                <td>0.03</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
 </html>
