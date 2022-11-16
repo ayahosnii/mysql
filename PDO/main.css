@@ -37,6 +37,23 @@ form.app_form fieldset legend{
     background: #e4e4e4;
     padding: 5px;
 }
+
+form.app_form fieldset p.message{
+    background: #9adc81;
+    border: #5daf00;
+    color: #000000;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 3px;
+}
+form.app_form fieldset p.message.error{
+    background: #dc8181;
+    border: #af0000;
+    color: #000000;
+    padding: 5px;
+    margin: 3px;
+}
+
 form.app_form table {
     width: 100%;
 }
@@ -57,13 +74,14 @@ form.app_form table tr td input[type=submit]{
     color: #fff;
     font-family: Arial;
     font-size: 1em;
+    cursor: pointer;
 }
 form.app_form table tr td{
     padding: 4px;
 }
 
 div.wrapper div.employees table{
-    width: 600px;
+    width: 780px;
     margin: 20px 20px 0 0;
     border-collapse: collapse;
 }
@@ -85,4 +103,9 @@ div.wrapper div.employees table tbody td{
     padding: 5px;
     border: solid 1px #e4e4e4;
     font: bold 0.9em Arial Helvetica, sans-serif;
+}
+
+div.wrapper div.employees table tbody td a:link,
+div.wrapper div.employees table tbody td a:visited{
+    color: darkcyan;
 }
