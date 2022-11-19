@@ -1,4 +1,5 @@
 <?php
+$connection = null;
 //Establish a connection to your db server
 
 // $dsn data source name : mysql://hostname=localhost;dbname=php_pdo

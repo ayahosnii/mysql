@@ -1,6 +1,7 @@
 <?php
+require_once 'abstractmodel.php';
 
-class Employee
+class Employee extends AbstractModel
 {
     public $id;
     public $name;
@@ -10,22 +11,55 @@ class Employee
     public $salary;
 
 
+    protected static $tableName = 'employees';
+
+    protected static $tableSchema = array(
+        'name' => self::DATA_TYPE_STR,
+        'age' => self::DATA_TYPE_INT,
+        'address' => self::DATA_TYPE_STR,
+        'tax' => self::DATA_TYPE_DECIMAL,
+        'salary' => self::DATA_TYPE_DECIMAL
+    );
+
+    //protected static $tableName = 'employees';
     public function __construct($name, $age, $address, $tax, $salary)
     {
-        $this->age = $age;
+        global $connection;
+
         $this->name = $name;
+        $this->age = $age;
         $this->address = $address;
-        $this->salary = $salary;
         $this->tax = $tax;
+        $this->salary = $salary;
+
     }
+    protected static $primaryKey = 'id';
+
 
     public function __get($prop)
     {
-        
+        return $this->$prop;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 
     public function calculateSalary()
     {
         return $this->salary - ($this->salary * $this->tax / 100);
+    }
+
+    public function fireEmployee()
+    {
+
+    }
+
+    public function promoteEmployee()
+    {}
+    public function getTableName()
+    {
+        return self::$tableName;
     }
 }
